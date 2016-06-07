@@ -7,9 +7,13 @@ dependencies:
   - image
   - user
   - views
+  - entity (>=8.x-1.0-alpha3)
+  - system (>=8.1.0)
+test_dependencies:
+  - entity
 
-# Information added by Drupal.org packaging script on 2016-01-26
-version: '8.x-1.0-beta2'
+# Information added by Drupal.org packaging script on 2016-05-31
+version: '8.x-1.1'
 core: '8.x'
 project: 'media_entity'
-datestamp: 1453824644
+datestamp: 1464699547

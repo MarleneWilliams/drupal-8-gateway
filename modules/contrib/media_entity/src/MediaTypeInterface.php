@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\media_entity\MediaTypeInterface.
- */
-
 namespace Drupal\media_entity;
 
 use Drupal\Component\Plugin\PluginInspectionInterface;
@@ -66,5 +61,13 @@ interface MediaTypeInterface extends PluginInspectionInterface, ConfigurablePlug
    *   URI of the thumbnail.
    */
   public function thumbnail(MediaInterface $media);
+
+  /**
+   * Gets the default thumbnail image.
+   *
+   * @return string
+   *   Uri of the default thumbnail image.
+   */
+  public function getDefaultThumbnail();
 
 }
