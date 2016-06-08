@@ -1,0 +1,66 @@
+.page-header {
+	background: $color--primary url(../images/banner-1.jpg) no-repeat;
+	color: white;
+	position: relative;
+	a {
+		color: white;
+		&.is-active {
+			color: white;
+		}
+	}
+	ul.menu {
+		@extend %inline-list;
+		a.is-active {
+			color: white;
+		}
+	}
+}
+
+.branding {
+	padding: 3em 0 2em 0;
+	text-align: center;
+	&__site-logo {
+		margin: 0 auto;
+		max-width: 80%;
+		width: 22em;
+	}
+	&__site-title {
+		@extend %hide;
+	}
+	&__site-slogan {
+		font-size: 1.5em;
+		font-weight: normal;
+		margin-top: 1em;
+		text-shadow: 0px 0px 10px black;
+		word-spacing: 5em;
+	}
+}
+
+.region-navigation {
+	background-color: transparentize($color--primary, .3);
+	.menu {
+		text-align: center;
+	}
+	.menu-item {
+		padding: 0;
+		a {
+			display: block;
+			font-size: 1.25em;
+			padding: .5em 1.5em;
+			text-decoration: none;
+			&:hover {
+				background-color: $color--primary;
+			}
+		}
+	}
+}
+.region-secondary-navigation {
+	background-color: transparentize($color--primary, .3);
+	position: absolute;
+	text-align: right;
+	top: 0;
+	width: 100%;
+	.block {
+		display: inline-block;
+	}
+}

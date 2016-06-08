@@ -1,0 +1,23 @@
+// Apply to ul and ol as needed
+%inline-list {
+	list-style: none none;
+	padding: 0;
+  li {
+  	display: inline-block;
+  }
+}
+
+
+// Accessibly hide an element
+%hide {
+	clip: rect(1px,1px,1px,1px);
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+
+	margin: 0;
+	padding: 0;
+}

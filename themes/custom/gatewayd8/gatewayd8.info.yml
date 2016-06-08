@@ -9,11 +9,16 @@ libraries:
   - gatewayd8/global-styling
 # Regions
 regions:
-  header: Header
-  featured: Featured
-  content: Content
-  sidebar_first: First sidebar
-  sidebar_second: Second sidebar
+  site_branding: Site branding
+  navigation: Navigation
+  secondary_navigation: Secondary navigation
+  banner: Banner
+  content: Main content
+  aside_content: Aside content / sidebar
+  featured_main: Featured content - main
+  featured_one: Featured content - 1
+  featured_two: Featured content - 2
+  featured_three: Featured content - 3
   footer: Footer
 
 # For compatibility with Pattern Lab templates; this list must
@@ -36,3 +41,9 @@ component-libraries:
   pages:
     paths:
       - pattern-lab/source/_patterns/04-pages
+
+# Information added by Drupal.org packaging script on 2016-05-11
+version: '8.x-1.0'
+core: '8.x'
+project: 'gatewayd8'
+datestamp: 1463007840

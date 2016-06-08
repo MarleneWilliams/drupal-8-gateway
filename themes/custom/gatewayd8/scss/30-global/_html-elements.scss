@@ -10,6 +10,13 @@ h1 {
   @include h1();
 }
 
+a {
+  color: $color--primary;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 blockquote {
   font-style: italic;
   border-left: solid 3px $color--gray;
