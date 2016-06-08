@@ -667,6 +667,7 @@ input[type="submit"],
 
 .page-header {
   background: #352016 url(../images/banner-1.jpg) no-repeat;
+  background-size: cover;
   color: white;
   position: relative;
 }
@@ -735,6 +736,18 @@ input[type="submit"],
 
 .region-secondary-navigation .block {
   display: inline-block;
+}
+
+.main-content {
+  margin: 0 auto;
+  max-width: 75em;
+  padding: 1em;
+}
+
+.region-inner {
+  margin: 0 auto;
+  max-width: 75em;
+  padding: 0 1em;
 }
 
 /*------------------------------------*    $PATTERN LAB-SPECIFIC STYLES
