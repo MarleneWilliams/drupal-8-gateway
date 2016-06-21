@@ -1,0 +1,23 @@
+.view-events {
+	.views-row {
+		@extend %clearfix;
+		margin-bottom: $vertical-spacing;
+	}
+	.image {
+		float: left;
+		margin-right: $horizontal-spacing;
+		width: 100px;
+	}
+	.title {
+		margin: 0;
+	}
+	.date {
+		font-style: italic;
+	}
+}
+
+.block-views-blockevents-block-1 {
+	h2 {
+		@include icon(calendar);
+	}
+}

@@ -3,3 +3,10 @@
     clear: both;
   }
 }
+.more-link,
+.views-more-link {
+	@extend %more-link;
+}
+.more-link {
+	margin-top: $vertical-spacing;
+}

@@ -19,3 +19,8 @@ $vertical-and-horizontal-spacing: $vertical-spacing $horizontal-spacing;
 $content-width: 100%;
 $sidebar-width: 25%;
 $content-with-sidebar-width: $content-width - $sidebar-width;
+
+// Transitions
+$transition-time: .2s;
+$transition-style: ease;
+$transition-time-style: $transition-time $transition-style;

@@ -6,6 +6,7 @@
 	@extend %clearfix;
 	min-height: 10em;
 	.block {
+		font-size: .85em;
 		@include breakpoint($bp--medium-up) {
 			float: left;
 			padding-right: $horizontal-spacing;

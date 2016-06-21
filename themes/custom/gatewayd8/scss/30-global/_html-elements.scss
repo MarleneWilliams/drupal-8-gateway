@@ -15,7 +15,12 @@ h2 {
 }
 
 a {
-  color: $color--primary;
+  color: $color--secondary;
+  transition:
+    background-color $transition-time-style,
+    border-color $transition-time-style,
+    color $transition-time-style
+  ;
   &:hover {
     text-decoration: none;
   }
@@ -32,14 +37,4 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-// All last children
-:last-child {
-  margin-bottom: 0;
-}
-
-// all last children with a class
-[class]:last-child { 
-  margin-bottom: 0;
-} 
  

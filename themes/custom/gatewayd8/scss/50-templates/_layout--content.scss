@@ -3,14 +3,14 @@
 	max-width: 75em;
 }
 .region-content {
-	padding: $vertical-spacing 0;
+	padding: $vertical-spacing 0 3em 0;
 	@extend %clearfix;
 }
 
 .region-inner {
 	margin: 0 auto;
 	max-width: 75em;
-	padding: 0 1em;
+	padding: 0 $horizontal-spacing;
 }
 
 // Temporary layout styling
@@ -19,7 +19,7 @@
 .block-views-blockevents-block-1 {
 	@include breakpoint($bp--medium-up) {
 		float: left;
-		padding-right: $horizontal-spacing;
+		padding-right: $horizontal-spacing * 2;
 		width: 66%;
 	}
 }

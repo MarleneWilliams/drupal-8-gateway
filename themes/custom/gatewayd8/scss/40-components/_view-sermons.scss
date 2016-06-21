@@ -1,0 +1,17 @@
+.view-sermons {
+	.views-row {
+		margin-bottom: $vertical-spacing / 2;
+	}
+	.title {
+		font-weight: bold;
+		&:after {
+			content: ' - ';
+		}
+	}
+}
+
+.block-views-blocksermons-block-1 {
+	h2 {
+		@include icon(mic);
+	}
+}

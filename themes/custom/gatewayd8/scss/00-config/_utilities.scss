@@ -20,6 +20,14 @@
 	margin: 0;
 	padding: 0;
 }
+%unhide {
+	clip: auto;
+	position: static;
+	left: auto;
+	width: auto;
+	height: auto;
+	overflow: visible;
+}
 
 // Clearfix
 %clearfix {
@@ -36,5 +44,28 @@
 	color: $white;
 	a {
 		color: $white;
+		&:hover {
+			color: lighten($color--secondary, 40%);
+		}
 	}
+}
+
+// More link
+%more-link {
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+	&:after {
+		content: ' \25b6';
+		font-size: .75em;
+	}
+}
+
+// Icons
+%icon-hide-text {
+	display: block;
+	height: 1em;
+	overflow: hidden;
+	width: 1em;
 }

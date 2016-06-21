@@ -18,23 +18,32 @@
 }
 
 .branding {
-	padding: 3em 0 2em 0;
+	padding: 3em 0 1em 0;
 	text-align: center;
 	&__site-logo {
 		margin: 0 auto;
-		max-width: 80%;
-		width: 22em;
+		max-width: 7em;
 	}
 	&__site-title {
 		@extend %hide;
 	}
 	&__site-slogan {
+		@extend %hide;
 		font-family: $font--family--alternate;
-		font-size: 1.5em;
-		font-weight: normal;
-		margin-top: 1em;
 		text-shadow: 0px 0px 10px black;
-		word-spacing: 5em;
+	}
+	.path-frontpage & {
+		&__site-logo {
+			max-width: 80%;
+			width: 22em;
+		}
+		&__site-slogan {
+			@extend %unhide;
+			font-size: 1.5em;
+			font-weight: normal;
+			margin-top: 1em;
+			word-spacing: 5em;
+		}
 	}
 }
 
@@ -52,12 +61,27 @@
 			text-decoration: none;
 			text-transform: uppercase;
 			&:hover {
-				background-color: $color--primary;
+				background-color: $color--secondary;
 			}
 		}
 	}
 }
+.menu--social-menu {
+	.menu-item {
+		padding-right: $horizontal-spacing / 2;
+	}
+  .email {
+  	@include icon(mail-alt);
+  	@extend %icon-hide-text;
+  }
+  .facebook {
+  	@include icon(facebook);
+  	@extend %icon-hide-text;
+  }
+}
+
 .region-secondary-navigation {
+	@extend %colors--light-on-dark;
 	background-color: transparentize($color--primary, .3);
 	@include breakpoint($bp--medium-up) {
 		position: absolute;
@@ -74,9 +98,6 @@
 		padding-right: $vertical-spacing;
 		text-decoration: none;
 		text-transform: uppercase;
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 }
 

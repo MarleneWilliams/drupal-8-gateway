@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Stylesheet: Main Stylesheet
  *
@@ -431,6 +432,46 @@ th {
   font-style: normal;
 }
 
+.block-views-blockevents-block-1 h2:before, .block-views-blocksermons-block-1 h2:before, .menu--social-menu .email:before, .menu--social-menu .facebook:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.menu--social-menu .email:before {
+  content: "";
+}
+
+.block-views-blockevents-block-1 h2:before {
+  content: "";
+}
+
+.menu--social-menu .facebook:before {
+  content: "";
+}
+
+.block-views-blocksermons-block-1 h2:before {
+  content: "";
+}
+
 /**
  *
  * Settings variables
@@ -445,7 +486,7 @@ th {
   display: inline-block;
 }
 
-.branding__site-title {
+.branding__site-title, .branding__site-slogan {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
   left: -10000px;
@@ -457,19 +498,55 @@ th {
   padding: 0;
 }
 
-.region-content:after, .region-footer:after {
+.path-frontpage .branding__site-slogan {
+  clip: auto;
+  position: static;
+  left: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.view-events .views-row:after, .region-content:after, .region-footer:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.wrapper-footer {
+.wrapper-footer, .region-secondary-navigation {
   background-color: #352016;
   color: #ffffff;
 }
 
-.wrapper-footer a {
+.wrapper-footer a, .region-secondary-navigation a {
   color: #ffffff;
+}
+
+.wrapper-footer a:hover, .region-secondary-navigation a:hover {
+  color: #b9cf95;
+}
+
+.more-link,
+.views-more-link {
+  text-decoration: none;
+}
+
+.more-link:hover,
+.views-more-link:hover {
+  text-decoration: underline;
+}
+
+.more-link:after,
+.views-more-link:after {
+  content: ' \25b6';
+  font-size: .75em;
+}
+
+.menu--social-menu .email, .menu--social-menu .facebook {
+  display: block;
+  height: 1em;
+  overflow: hidden;
+  width: 1em;
 }
 
 .header {
@@ -503,7 +580,8 @@ h2 {
 }
 
 a {
-  color: #352016;
+  color: #53692f;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 a:hover {
@@ -522,16 +600,12 @@ img {
   height: auto;
 }
 
-:last-child {
-  margin-bottom: 0;
-}
-
-[class]:last-child {
-  margin-bottom: 0;
-}
-
 .views-row {
   clear: both;
+}
+
+.more-link {
+  margin-top: 1rem;
 }
 
 .btn {
@@ -560,6 +634,12 @@ input[type="submit"],
   color: #e8e8e8;
   text-decoration: none;
   border: 0;
+}
+
+.page-node-type-event .field--name-field-image {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /**
@@ -634,6 +714,36 @@ input[type="submit"],
 
 .soundContainer .sound__content {
   font-family: "MontserratRegular", sans-serif;
+}
+
+.view-events .views-row {
+  margin-bottom: 1rem;
+}
+
+.view-events .image {
+  float: left;
+  margin-right: 1.5rem;
+  width: 100px;
+}
+
+.view-events .title {
+  margin: 0;
+}
+
+.view-events .date {
+  font-style: italic;
+}
+
+.view-sermons .views-row {
+  margin-bottom: 0.5rem;
+}
+
+.view-sermons .title {
+  font-weight: bold;
+}
+
+.view-sermons .title:after {
+  content: ' - ';
 }
 
 @media (min-width: 480px) {
@@ -717,19 +827,19 @@ input[type="submit"],
 }
 
 .region-content {
-  padding: 1rem 0;
+  padding: 1rem 0 3em 0;
 }
 
 .region-inner {
   margin: 0 auto;
   max-width: 75em;
-  padding: 0 1em;
+  padding: 0 1.5rem;
 }
 
 @media (min-width: 640px) {
   .block-views-blockevents-block-1 {
     float: left;
-    padding-right: 1.5rem;
+    padding-right: 3rem;
     width: 66%;
   }
 }
@@ -747,6 +857,10 @@ input[type="submit"],
 
 .region-footer {
   min-height: 10em;
+}
+
+.region-footer .block {
+  font-size: .85em;
 }
 
 @media (min-width: 640px) {
@@ -784,22 +898,29 @@ input[type="submit"],
 }
 
 .branding {
-  padding: 3em 0 2em 0;
+  padding: 3em 0 1em 0;
   text-align: center;
 }
 
 .branding__site-logo {
   margin: 0 auto;
-  max-width: 80%;
-  width: 22em;
+  max-width: 7em;
 }
 
 .branding__site-slogan {
   font-family: "LoraRegular", sans-serif;
+  text-shadow: 0px 0px 10px black;
+}
+
+.path-frontpage .branding__site-logo {
+  max-width: 80%;
+  width: 22em;
+}
+
+.path-frontpage .branding__site-slogan {
   font-size: 1.5em;
   font-weight: normal;
   margin-top: 1em;
-  text-shadow: 0px 0px 10px black;
   word-spacing: 5em;
 }
 
@@ -824,7 +945,11 @@ input[type="submit"],
 }
 
 .region-navigation .menu-item a:hover {
-  background-color: #352016;
+  background-color: #53692f;
+}
+
+.menu--social-menu .menu-item {
+  padding-right: 0.75rem;
 }
 
 .region-secondary-navigation {
@@ -850,10 +975,6 @@ input[type="submit"],
   padding-right: 1rem;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.region-secondary-navigation a:hover {
-  text-decoration: underline;
 }
 
 .menu--secondary-menu {
