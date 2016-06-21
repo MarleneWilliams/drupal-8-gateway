@@ -7,7 +7,6 @@
   }
 }
 
-
 // Accessibly hide an element
 %hide {
 	clip: rect(1px,1px,1px,1px);
@@ -20,4 +19,22 @@
 
 	margin: 0;
 	padding: 0;
+}
+
+// Clearfix
+%clearfix {
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}
+
+// Light on dark background
+%colors--light-on-dark {
+	background-color: $color--primary;
+	color: $white;
+	a {
+		color: $white;
+	}
 }

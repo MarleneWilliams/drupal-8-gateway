@@ -3,10 +3,6 @@
 ////
 
 /// @type color
-$color--primary--blue: #0B81C9;
-/// @type color
-$color--primary--orange: #F27A22;
-/// @type color
 $color--primary--brown: #352016;
 /// @type color
 $color--primary: $color--primary--brown;
@@ -34,3 +30,6 @@ $color--gray--darker: hsl(0, 0%, 20%);
 $color--gray--darkest: hsl(0, 0%, 16.1%);
 /// @type color
 $color--gray--black: hsl(0, 0%, 7.8%);
+
+$white: #ffffff;
+$black: #000000;

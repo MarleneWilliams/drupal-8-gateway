@@ -9,3 +9,13 @@ $spacing: 20px;
 $gap: 5px;
 $border: solid 1px $color--gray;
 
+// Spacing
+$vertical-spacing: 1rem;
+$horizontal-spacing: 1.5rem;
+
+$vertical-and-horizontal-spacing: $vertical-spacing $horizontal-spacing;
+
+// Region settings
+$content-width: 100%;
+$sidebar-width: 25%;
+$content-with-sidebar-width: $content-width - $sidebar-width;

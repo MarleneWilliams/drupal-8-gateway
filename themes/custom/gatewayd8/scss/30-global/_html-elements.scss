@@ -10,6 +10,10 @@ h1 {
   @include h1();
 }
 
+h2 {
+  @include h2();
+}
+
 a {
   color: $color--primary;
   &:hover {

@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,900");
+// @import url("//fonts.googleapis.com/css?family=Lato:400,700,900");
 
 @mixin body-copy() {
 	color: $color--primary;
@@ -6,9 +6,9 @@
 }
 
 @mixin h1() {
-  font-family: $font--family--regular;
+  font-family: $font--family--alternate;
 }
 
 @mixin h2() {
-  font-family: sans-serif;
+  font-family: $font--family--alternate;
 }

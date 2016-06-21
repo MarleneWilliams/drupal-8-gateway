@@ -1,0 +1,32 @@
+.main-content {
+	margin: 0 auto;
+	max-width: 75em;
+}
+.region-content {
+	padding: $vertical-spacing 0;
+	@extend %clearfix;
+}
+
+.region-inner {
+	margin: 0 auto;
+	max-width: 75em;
+	padding: 0 1em;
+}
+
+// Temporary layout styling
+
+// Homepage events block
+.block-views-blockevents-block-1 {
+	@include breakpoint($bp--medium-up) {
+		float: left;
+		padding-right: $horizontal-spacing;
+		width: 66%;
+	}
+}
+// Homepage sermons block
+.block-views-blocksermons-block-1 {
+	@include breakpoint($bp--medium-up) {
+		float: left;
+		width: 33%;
+	}
+}

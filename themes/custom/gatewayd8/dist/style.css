@@ -8,7 +8,6 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url("//fonts.googleapis.com/css?family=Lato:400,700,900");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -408,6 +407,30 @@ th {
  *   display: block; // shown above 400
  * }
  */
+@font-face {
+  font-family: "LoraRegular";
+  src: url("../assets/fonts/lora/lora-regular-webfont.eot");
+  src: url("../assets/fonts/lora/lora-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/lora/lora-regular-webfont.woff2") format("woff2"), url("../assets/fonts/lora/lora-regular-webfont.woff") format("woff"), url("../assets/fonts/lora/lora-regular-webfont.ttf") format("truetype"), url("../assets/fonts/lora/lora-regular-webfont.svg#LoraRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MontserratRegular";
+  src: url("../assets/fonts/montserrat/montserrat-regular-webfont.eot");
+  src: url("../assets/fonts/montserrat/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2"), url("../assets/fonts/montserrat/montserrat-regular-webfont.woff") format("woff"), url("../assets/fonts/montserrat/montserrat-regular-webfont.ttf") format("truetype"), url("../assets/fonts/montserrat/montserrat-regular-webfont.svg#MontserratRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("../assets/fonts/fontello/font/icons.eot");
+  src: url("../assets/fonts/fontello/font/icons.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/fontello/font/icons.woff2") format("woff2"), url("../assets/fonts/fontello/font/icons.woff") format("woff"), url("../assets/fonts/fontello/font/icons.ttf") format("truetype"), url("../assets/fonts/fontello/font/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /**
  *
  * Settings variables
@@ -434,6 +457,21 @@ th {
   padding: 0;
 }
 
+.region-content:after, .region-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.wrapper-footer {
+  background-color: #352016;
+  color: #ffffff;
+}
+
+.wrapper-footer a {
+  color: #ffffff;
+}
+
 .header {
   position: relative;
   border-bottom: solid 1px #68696d;
@@ -453,11 +491,15 @@ th {
 
 body {
   color: #352016;
-  font-family: "Lato", sans-serif;
+  font-family: "MontserratRegular", sans-serif;
 }
 
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: "LoraRegular", sans-serif;
+}
+
+h2 {
+  font-family: "LoraRegular", sans-serif;
 }
 
 a {
@@ -590,6 +632,10 @@ input[type="submit"],
   border: none;
 }
 
+.soundContainer .sound__content {
+  font-family: "MontserratRegular", sans-serif;
+}
+
 @media (min-width: 480px) {
   .g-2up .gi:nth-child(2n+1) {
     width: 50%;
@@ -665,8 +711,61 @@ input[type="submit"],
   }
 }
 
+.main-content {
+  margin: 0 auto;
+  max-width: 75em;
+}
+
+.region-content {
+  padding: 1rem 0;
+}
+
+.region-inner {
+  margin: 0 auto;
+  max-width: 75em;
+  padding: 0 1em;
+}
+
+@media (min-width: 640px) {
+  .block-views-blockevents-block-1 {
+    float: left;
+    padding-right: 1.5rem;
+    width: 66%;
+  }
+}
+
+@media (min-width: 640px) {
+  .block-views-blocksermons-block-1 {
+    float: left;
+    width: 33%;
+  }
+}
+
+.wrapper-footer {
+  padding: 1rem 0;
+}
+
+.region-footer {
+  min-height: 10em;
+}
+
+@media (min-width: 640px) {
+  .region-footer .block {
+    float: left;
+    padding-right: 1.5rem;
+  }
+  .region-footer .block:last-child {
+    padding-right: 0;
+  }
+}
+
+#block-footerbranding h2 {
+  font-family: "MontserratRegular", sans-serif;
+  font-size: 1em;
+}
+
 .page-header {
-  background: #352016 url(../images/banner-1.jpg) no-repeat;
+  background: #352016 url(../assets/images/banner-1.jpg) no-repeat;
   background-size: cover;
   color: white;
   position: relative;
@@ -696,6 +795,7 @@ input[type="submit"],
 }
 
 .branding__site-slogan {
+  font-family: "LoraRegular", sans-serif;
   font-size: 1.5em;
   font-weight: normal;
   margin-top: 1em;
@@ -708,6 +808,7 @@ input[type="submit"],
 }
 
 .region-navigation .menu {
+  margin: 0;
   text-align: center;
 }
 
@@ -717,9 +818,9 @@ input[type="submit"],
 
 .region-navigation .menu-item a {
   display: block;
-  font-size: 1.25em;
   padding: .5em 1.5em;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .region-navigation .menu-item a:hover {
@@ -728,26 +829,35 @@ input[type="submit"],
 
 .region-secondary-navigation {
   background-color: rgba(53, 32, 22, 0.7);
-  position: absolute;
-  text-align: right;
-  top: 0;
-  width: 100%;
 }
 
-.region-secondary-navigation .block {
-  display: inline-block;
+@media (min-width: 640px) {
+  .region-secondary-navigation {
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 100%;
+  }
 }
 
-.main-content {
-  margin: 0 auto;
-  max-width: 75em;
-  padding: 1em;
+@media (min-width: 640px) {
+  .region-secondary-navigation .block {
+    display: inline-block;
+  }
 }
 
-.region-inner {
-  margin: 0 auto;
-  max-width: 75em;
-  padding: 0 1em;
+.region-secondary-navigation a {
+  padding-right: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.region-secondary-navigation a:hover {
+  text-decoration: underline;
+}
+
+.menu--secondary-menu {
+  float: left;
 }
 
 /*------------------------------------*    $PATTERN LAB-SPECIFIC STYLES

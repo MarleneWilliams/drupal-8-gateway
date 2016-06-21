@@ -1,5 +1,5 @@
 .page-header {
-	background: $color--primary url(../images/banner-1.jpg) no-repeat;
+	background: $color--primary url(../assets/images/banner-1.jpg) no-repeat;
 	background-size: cover;
 	color: white;
 	position: relative;
@@ -29,6 +29,7 @@
 		@extend %hide;
 	}
 	&__site-slogan {
+		font-family: $font--family--alternate;
 		font-size: 1.5em;
 		font-weight: normal;
 		margin-top: 1em;
@@ -40,15 +41,16 @@
 .region-navigation {
 	background-color: transparentize($color--primary, .3);
 	.menu {
+		margin: 0;
 		text-align: center;
 	}
 	.menu-item {
 		padding: 0;
 		a {
 			display: block;
-			font-size: 1.25em;
 			padding: .5em 1.5em;
 			text-decoration: none;
+			text-transform: uppercase;
 			&:hover {
 				background-color: $color--primary;
 			}
@@ -57,11 +59,27 @@
 }
 .region-secondary-navigation {
 	background-color: transparentize($color--primary, .3);
-	position: absolute;
-	text-align: right;
-	top: 0;
-	width: 100%;
-	.block {
-		display: inline-block;
+	@include breakpoint($bp--medium-up) {
+		position: absolute;
+		text-align: right;
+		top: 0;
+		width: 100%;
 	}
+	.block {
+		@include breakpoint($bp--medium-up) {
+			display: inline-block;
+		}
+	}
+	a {
+		padding-right: $vertical-spacing;
+		text-decoration: none;
+		text-transform: uppercase;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.menu--secondary-menu {
+	float: left;
 }

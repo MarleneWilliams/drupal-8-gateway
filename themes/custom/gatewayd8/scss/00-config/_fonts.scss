@@ -2,11 +2,146 @@
 /// @group fonts
 ////
 
+//
+// Local fonts
+//
+
+// This path should be relative to the rendered CSS
+$fonts-path: '../assets/fonts/';
+
+// List of fonts used
+//   'name_of_font': 'path_of_font'
+// Please add only as many as you absolutely need
+$font-list: (
+  'LoraRegular': 'lora/lora-regular-webfont',
+  'MontserratRegular': 'montserrat/montserrat-regular-webfont',
+  'icons': 'fontello/font/icons'
+);
+
+
+// This generates the @font-face code for each variation and uses the above map list of fonts
+@each $fontname, $fontpath in $font-list {
+  @font-face {
+    font-family: '#{$fontname}';
+    src: url('#{$fonts-path}#{$fontpath}.eot');
+    src: url('#{$fonts-path}#{$fontpath}.eot?#iefix') format('embedded-opentype'),
+         url('#{$fonts-path}#{$fontpath}.woff2') format('woff2'),
+         url('#{$fonts-path}#{$fontpath}.woff') format('woff'),
+         url('#{$fonts-path}#{$fontpath}.ttf') format('truetype'),
+         url('#{$fonts-path}#{$fontpath}.svg##{$fontname}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+//
+// Icons
+// Copied from /fonts/fontello-icons/css/icons.css and then turned into Sass.
+//
+
+// Defaults
+%icon-defaults {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  // margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+// Icons map
+//   icon-name: character-mapping
+// Get authoritative list of icons and character mapping from the font icon CSS
+$icons-list: (
+  search:          '\e800',
+  mail:             '\e801',
+  mail-alt:         '\e802',
+  star:             '\e803',
+  star-empty:       '\e804',
+  users:            '\e805',
+  home:             '\e806',
+  info-circled:     '\e807',
+  help-circled:     '\e808',
+  download-cloud:   '\e809',
+  chat:             '\e80a',
+  location:         '\e80b',
+  rss:              '\e80c',
+  phone:            '\e80d',
+  calendar:         '\e80e',
+  volume-up:        '\e80f',
+  clock:            '\e810',
+  angle-left:       '\e811',
+  angle-right:      '\e812',
+  glob:             '\e813',
+  align-justify:    '\e814',
+  facebook-squared: '\e815',
+  facebook:         '\e816',
+  facebook-official:'\e817',
+  twitter-squared:  '\e818',
+  twitter:          '\e819',
+  youtube:          '\e81a',
+  youtube-squared:  '\e81b',
+  users-1:          '\e81c',
+  menu:             '\e81d',
+  info-circled-1:   '\e81e',
+  download:         '\e81f',
+  chat-1:           '\e820',
+  vcard:            '\e821',
+  location-1:       '\e822',
+  mic:              '\e823',
+  clock-1:          '\e824'
+);
+
+// Generate placeholder classes
+@each $icon, $content in $icons-list {
+  %icon-#{$icon}-content {
+    content: $content;
+  }
+}
+
+// Icon mixins
+@mixin icon($icon-name, $position: "before") {
+	&:#{$position} {
+		@extend %icon-defaults;
+		@extend %icon-#{$icon-name}-content;
+		@content;
+	}
+}
+@mixin icon-custom($icon-content, $position: "before") {
+	&:#{$position} {
+		@extend %icon-defaults;
+		content: '#{$icon-content}';
+		@content;
+	}
+}
+
 // Some of the font families have to be renamed to use the proper one once we have the web font provider setup.
 ///
-$font--family--regular: "Lato", sans-serif;
+$font--family--regular: "MontserratRegular", sans-serif;
 ///
-$font--family--alternate: "Tisa Pro", sans-serif;
+$font--family--alternate: "LoraRegular", sans-serif;
 
 // Font Sizes
 ///

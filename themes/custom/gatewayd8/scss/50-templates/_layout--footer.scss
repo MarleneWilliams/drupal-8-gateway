@@ -1,0 +1,25 @@
+.wrapper-footer {
+	@extend %colors--light-on-dark;
+	padding: $vertical-spacing 0;
+}
+.region-footer {
+	@extend %clearfix;
+	min-height: 10em;
+	.block {
+		@include breakpoint($bp--medium-up) {
+			float: left;
+			padding-right: $horizontal-spacing;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+// Blocks
+#block-footerbranding {
+	h2 {
+		font-family: $font--family--regular;
+		font-size: 1em;
+	}
+}
