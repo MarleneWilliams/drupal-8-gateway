@@ -1,10 +1,16 @@
 .main-content {
 	margin: 0 auto;
 	max-width: 75em;
+	@extend %clearfix;
 }
 .region-content {
 	padding: $vertical-spacing 0 3em 0;
-	@extend %clearfix;
+	.layout-one-sidebar & {
+		@include breakpoint($bp--medium-up) {
+			float: right;
+			width: 75%;
+		}
+	}
 }
 
 .region-inner {
@@ -29,4 +35,16 @@
 		float: left;
 		width: 33%;
 	}
+}
+
+.aside-content {
+	.layout-one-sidebar & {
+		@include breakpoint($bp--medium-up) {
+			padding-top: 3em;
+			width: 25%;
+		}
+	}
+}
+.region-aside-content {
+	margin-bottom: $vertical-spacing * 3;
 }

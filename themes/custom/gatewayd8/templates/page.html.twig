@@ -69,16 +69,17 @@
 
 {% if page.content or page.aside-content %}
   <div id="main-wrapper" class="wrapper-main">
-    {% if page.content %}
+    {% if page.content or page.aside_content %}
       <main id="content" class="main-content" role="main" aria-label="{{ 'Main content'|t}}">
         <a id="main-content" tabindex="-1"></a>
         {{ page.content }}
+        
+        {% if page.aside_content %}
+          <aside id="aside-content" class="aside-content" role="complementary">
+            {{ page.aside_content }}
+          </aside>
+        {% endif %}
       </main>
-    {% endif %}
-    {% if page.aside_content %}
-      <aside id="aside-content" class="aside-content" role="complementary">
-        {{ page.aside_content }}
-      </aside>
     {% endif %}
   </div>
 {% endif %}
